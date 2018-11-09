@@ -1,9 +1,9 @@
 # (Rush C)
 
-The purpose of the project is to create a platform game with the following
+The purpose of the project is to create a platform game in C with the following
 requirements:
 
-* A player character,
+* One player character,
 * At least 2 maps,
 * At least 1 enemy with a dummy A.I.,
 * At least 1 way to harm the player,
@@ -11,17 +11,9 @@ requirements:
 * A game over with an explicit screen,
 * And a way to start over the game without exiting.
 
-The project obviously has to be done in C.
-
-## Features
-
-Here is a list of features we implemented for our 2D-platformer:
-
-* WIP
-
 ## Getting Started
 
-To be able to get a copy of the project up and running on your local machine,
+To be able to get a copy of the game up and running on your local machine,
 please follow these instructions:
 
 If you wish to create the game binary, please run `make` or `make game` at the
@@ -29,8 +21,25 @@ root of the project directory. To remove it, please run `make clean`.
 
 ## Running the tests
 
-To run the tests for the individual functions on this project, please use the
+To run the tests for each individual functions on this project, please use the
 following command: `make check`.
+
+
+## How to play
+
+A few sentences on how to play the game, what are the controls and maybe some
+game story.
+
+## Sources
+
+From the subject:
+> The different sources used (for the sprites, sounds and other resources).
+
+## Features
+
+Here is an exhaustive list of the features we implemented for our 2D-platformer:
+
+* WIP
 
 ## Authors
 
