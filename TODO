@@ -1,0 +1,23 @@
+# TODO
+
+- [ ] Main wrapper
+- [ ] Screen refresh
+- [ ] Update
+
+## Core feature
+
+- [ ] Player
+- [ ] Movements
+- [ ] Rooms
+- [ ] Enemies (opponent, danger)
+- [ ] Dummy enemy A.I.
+- [ ] Life points / damage
+- [ ] Game over
+
+## Additional feature
+
+- [ ] Head up display / Graphical user interface
+- [ ] Title screen
+- [ ] Gravity
+- [ ] Jumps
+- [ ] Loot
