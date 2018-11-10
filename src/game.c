@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
+#include <SDL_ttf.h>
 
 #ifdef DEBUG
 #include <stdio.h>
@@ -82,6 +83,15 @@ void open_audio(void)
     }
 }
 
+void init_ttf(void)
+{
+    if(TTF_Init() == -1)
+    {
+        printf("TTF_Init: %s\n", TTF_GetError());
+        exit(2);
+    }
+}
+
 void init_sdl_all(SDL_Window **window, SDL_Renderer **renderer)
 {
     init_sdl();
@@ -90,6 +100,7 @@ void init_sdl_all(SDL_Window **window, SDL_Renderer **renderer)
     *renderer = init_renderer(*window);
     init_mix();
     open_audio();
+    init_ttf();
 }
 
 void cleanup(SDL_Window *window, SDL_Renderer *renderer)
@@ -98,6 +109,7 @@ void cleanup(SDL_Window *window, SDL_Renderer *renderer)
     SDL_DestroyRenderer(renderer);
     IMG_Quit();
     Mix_CloseAudio();
+    TTF_Quit();
     while(Mix_Init(0))
         Mix_Quit();
     SDL_DestroyWindow(window);
@@ -162,6 +174,7 @@ int main(void)
     {
         .player = player,
         .renderer = renderer,
+        .map = NULL,
         .is_on = 1
     };
 

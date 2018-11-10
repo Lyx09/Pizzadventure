@@ -14,7 +14,7 @@
 struct GameState
 {
     SDL_Renderer *renderer;
-    //struct Map *map;
+    struct Map *map;
     struct Character *player;
     int is_on;
 };
