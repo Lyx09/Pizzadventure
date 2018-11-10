@@ -2,4 +2,5 @@
 *.swp
 *~
 .gdb_history
+.__afs*
 game
