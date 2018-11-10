@@ -7,8 +7,8 @@
 ## Core feature
 
 - [X] Input
-- [ ] Player
-- [ ] Movements
+- [/] Player
+- [/] Movements
 - [ ] Rooms
 - [ ] Enemies (opponent, danger)
 - [ ] Dummy enemy A.I.
