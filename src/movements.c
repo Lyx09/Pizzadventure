@@ -1,5 +1,7 @@
 #include "character.h"
 
+#define BLOCK_SIZE 20
+
 // Jump
 //
 // f(t) = 1/2 * gt^2 + vt + p   g gravity

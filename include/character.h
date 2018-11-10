@@ -1,7 +1,5 @@
 #include <stdlib.h>
 
-#define GRAVITY 1
-
 enum status
 {
     NORMAL = 0,
