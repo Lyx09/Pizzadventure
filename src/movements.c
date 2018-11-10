@@ -22,12 +22,14 @@ float apply_gravity(struct Character *character, struct GameState *gs)
     float fall = speed * delta_time;
     character->y_acc += y >= 0 ? -y : g * delta_time;
 
-    if (gs->map[x * 30 + WINDOW_WIDTH * fall * 30] == AIR)
+    if (gs->map->blocks[x * 30 + WINDOW_WIDTH * fall * 30] == OPEN)
         return fall;
 
-    int i = 1;
+    if (character->y_acc)
+        return y;
 
-    while (gs->map[x * 30 + WINDOW_WIDTH * (y - i) * 30] == AIR)
+    int i = 1;
+    while (gs->map->blocks[x * 30 + WINDOW_WIDTH * (y - i) * 30] == OPEN)
         i++;
 
     character->status = IDLE;
@@ -41,24 +43,24 @@ void update_position(struct Character *character, enum action action,
     float y = character->position.y;
     int index = x * 30 + WINDOW_WIDTH * (y + 1) * 30;
 
-    if (action & JUMP && gs->map[index] != AIR)
+    if (action & JUMP && gs->map->blocks[index] != OPEN)
     {
         character->y_acc = -12.0;
         character->status |= JUMPING;
     }
 
-    if (character->status & JUMP || gs->map[index] == AIR)
+    if (character->status & JUMP || gs->map->blocks[index] == OPEN)
         character->position.y += apply_gravity(character, gs);
 
     index = (x - 1) * 30 + WINDOW_WIDTH * y * 30;
-    if ((action & LEFT) && gs->map->blocks[index].state == AIR)
+    if ((action & LEFT) && gs->map->blocks[index].state == OPEN)
     {
         character->position.x -= 1;
         character->status |= RUNNING;
     }
 
     index = (x + 1) * 30 + WINDOW_WIDTH * y * 30;
-    if ((action & RIGHT) && gs->map->blocks[index].state == AIR)
+    if ((action & RIGHT) && gs->map->blocks[index].state == OPEN)
     {
         character->position.x += 1;
         character->status |= RUNNING;
