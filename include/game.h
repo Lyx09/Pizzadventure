@@ -10,14 +10,14 @@
 #define MUSIC_GAME_LAUNCH "./resources/music/gba.mp3"
 #define MUSIC_INTRO ""
 #define IMAGE_TITLE "./resources/background/cyberpunk-street.png"
+#define SPAWN_MAP "./maps/lvl0.map"
 
 struct GameState
 {
     SDL_Renderer *renderer;
-    /*
-    struct Map *map;
-    struct Player *player;
-    */
+    //struct Map *map;
+    struct Character *player;
+    int is_on;
 };
 
 #endif /* ! GAME_H */

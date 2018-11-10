@@ -7,6 +7,7 @@
 #include <stdio.h>
 #endif
 
+#include "character.h"
 #include "game.h"
 
 void init_sdl(void)
@@ -114,17 +115,17 @@ void title_screen(SDL_Renderer *renderer)
     SDL_FreeSurface(img_title);
 
     SDL_Rect src_rect = {
-    .x = 0,
-    .y = 0,
-    .w = img_title->w,
-    .h = img_title->h
+        .x = 0,
+        .y = 0,
+        .w = img_title->w,
+        .h = img_title->h
     };
 
-   SDL_Rect dst_rect = {
-    .x = 0,
-    .y = 0,
-    .w = WINDOW_WIDTH,
-    .h = WINDOW_HEIGHT
+    SDL_Rect dst_rect = {
+        .x = 0,
+        .y = 0,
+        .w = WINDOW_WIDTH,
+        .h = WINDOW_HEIGHT
     };
     SDL_RenderCopy(renderer, texture_title, &src_rect, &dst_rect);
     SDL_RenderPresent(renderer);
@@ -143,6 +144,8 @@ void title_screen(SDL_Renderer *renderer)
     while (Mix_PlayingMusic())
         SDL_Delay(100);
 
+    //FIXME Display main menu here
+
     Mix_FreeMusic(music_game_launch);
     SDL_DestroyTexture(texture_title);
 }
@@ -152,13 +155,27 @@ int main(void)
     SDL_Window *window;
     SDL_Renderer *renderer;
     init_sdl_all(&window, &renderer);
+
+    //Load map
+    struct Character *player = init_player();
+    struct GameState gs =
+    {
+        .player = player,
+        .renderer = renderer,
+        .is_on = 1
+    };
+
     title_screen(renderer);
 
-    //Run game
-    while (0)
+    while (gs.is_on)
     {
-        /* Game loop */
+        //struct Input user_input = get_current_input();
+        //update(&game, user_input);
+        //render_frame(game);
+        gs.is_on = 0;
     }
+
+    //Show game over screen ?
 
     // Use at_exit ?
     cleanup(window, renderer);
