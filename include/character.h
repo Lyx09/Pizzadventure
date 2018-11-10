@@ -24,7 +24,7 @@ struct Character
 {
     enum status status;
     struct vector2 position;
-    float y_accel;
+    float y_acc;
     int health;
 };
 
@@ -32,6 +32,7 @@ struct Character *init_player(void);
 
 struct Character *init_enemy(struct vector2 position, int health);
 
-void update_position(struct Character *character, float x, float y);
+void update_position(struct Character *character, enum action action,
+                     struct GameState *gs);
 
 void delete_character(struct Character *character);
