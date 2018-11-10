@@ -1,3 +1,6 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <stdlib.h>
 #include "game.h"
 #include "input.h"
@@ -36,3 +39,5 @@ void update_position(struct Character *character, enum action action,
                      struct GameState *gs);
 
 void delete_character(struct Character *character);
+
+#endif /* !PLAYER_H */
