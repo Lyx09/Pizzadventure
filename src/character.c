@@ -2,25 +2,21 @@
 #include <unistd.h>
 #include "character.h"
 
-struct Character init_player(void)
+struct Character *init_player(void)
 {
-    struct Character *player = malloc(sizeof(struct character));
+    struct Character *player = malloc(sizeof(struct Character));
 
     player->status = NORMAL;
-    player->position =
-    {
-        .x = .0;
-        .y = .0;
-    }
-
+    player->position.x = .0;
+    player->position.y = .0;
     player->health = 100;
 
     return player;
 }
 
-struct Character init_enemy(struct vector2 position, int health)
+struct Character *init_enemy(struct vector2 position, int health)
 {
-    struct Character *enemy = malloc(sizeof(struct character));
+    struct Character *enemy = malloc(sizeof(struct Character));
 
     enemy->status = NORMAL;
     enemy->position = position;
@@ -31,8 +27,8 @@ struct Character init_enemy(struct vector2 position, int health)
 
 void update_position(struct Character *character, float x, float y)
 {
-    character->x = x;
-    character->y = y;
+    character->position.x = x;
+    character->position.y = y;
 }
 
 void delete_character(struct Character *character)
@@ -42,7 +38,7 @@ void delete_character(struct Character *character)
 
 // TODO: remove me
 
-char get_current_input(void);
+char get_current_input(void)
 {
     char in = fgetc(stdin);
 
@@ -53,11 +49,11 @@ char get_current_input(void);
 
 int main(void)
 {
-    struct Character *player = init_player();
-    char in;
+    //struct Character *player = init_player();
+    //char in;
 
-    while (1)
+    while (0)
     {
-        in = get_current_input();
+        //in = get_current_input();
     }
 }
