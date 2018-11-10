@@ -1,13 +1,13 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
-#include <stdlib.h>
 
 #ifdef DEBUG
 #include <stdio.h>
 #endif
 
 #include "character.h"
+#include "input.h"
 #include "game.h"
 
 void init_sdl(void)
@@ -166,13 +166,19 @@ int main(void)
     };
 
     title_screen(renderer);
+    const Uint8 *state = SDL_GetKeyboardState(NULL);
 
     while (gs.is_on)
     {
-        //struct Input user_input = get_current_input();
+        enum action action = get_input(state);
+        if (action & ESCAPE)
+            gs.is_on = 0;
+        #ifdef DEBUG
+        printf("ACTION: %d\n", action);
+        #endif
+        //struct Input user_input = get_input();
         //update(&game, user_input);
         //render_frame(game);
-        gs.is_on = 0;
     }
 
     //Show game over screen ?

@@ -3,7 +3,6 @@
 
 #include <SDL.h>
 
-
 #define GAME_NAME "Yet Another Platformer"
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
