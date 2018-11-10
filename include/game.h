@@ -3,4 +3,13 @@
 
 
 
+struct GameState
+{
+    SDL_Renderer *renderer;
+    /*
+    struct Map *map;
+    struct Player *player;
+    */
+};
+
 #endif /* ! GAME_H */
