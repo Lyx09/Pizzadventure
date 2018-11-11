@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -std=c99 -Wall -Werror -Wextra -pedantic -I./include
-LDLIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL_ttf
+LDLIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
 
 # SDL
 CFLAGS += $(shell sdl2-config --cflags)
