@@ -75,9 +75,6 @@ void screen_write(TTF_Font *font, const char *text, struct vector2 dst,
 
 void render_fonts(SDL_Renderer *renderer)
 {
-    //int text_w = 0;
-    //int text_h = 0;
-
     TTF_Font *font = TTF_OpenFont("./resources/font/8bitlim.ttf", 50);
 
     struct vector2 vec_play =
