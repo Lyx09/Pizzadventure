@@ -128,6 +128,8 @@ int main(void)
     //Load map
     struct Map *map = generate_map(SPAWN_MAP);
     struct Character *player = init_player();
+    player->position.x = 400;   //
+    player->position.y = 300;   //
     struct GameState gs =
     {
         .player = player,

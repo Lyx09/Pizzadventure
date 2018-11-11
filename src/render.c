@@ -5,9 +5,32 @@
 
 void render_frame(struct GameState *gs)
 {
+    //SDL_RenderClear(renderer); ?
+    render_bg(gs);
     render_map(gs);
+    render_player(gs);
+
     //Render everything
     SDL_RenderPresent(gs->renderer);
+}
+
+void render_player(struct GameState *gs)
+{
+    SDL_Rect src_rect =
+    {
+        .x = 0,
+        .y = 0,
+        .w = 50, //FIXME
+        .h = 50
+    };
+    SDL_Rect dst_rect =
+    {
+        .x = gs->player->position.x,
+        .y = gs->player->position.y,
+        .w = 50,
+        .h = 50
+    };
+    SDL_RenderCopy(gs->renderer, gs->player_sprite, &src_rect, &dst_rect);
 }
 
 void render_bg(struct GameState *gs)
@@ -33,8 +56,6 @@ void render_bg(struct GameState *gs)
 
 void render_map(struct GameState *gs)
 {
-    //SDL_RenderClear(renderer); ?
-    render_bg(gs);
     struct Map *map = gs->map;
     SDL_Rect src_rect =
     {

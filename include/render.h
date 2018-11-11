@@ -5,6 +5,8 @@
 
 void render_frame(struct GameState *gs);
 void render_map(struct GameState *gs);
+void render_bg(struct GameState *gs);
+void render_player(struct GameState *gs);
 SDL_Texture *get_texture(SDL_Renderer *renderer, char *file);
 
 #endif
