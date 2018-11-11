@@ -20,15 +20,15 @@ void render_player(struct GameState *gs)
     {
         .x = 0,
         .y = 0,
-        .w = 50, //FIXME
-        .h = 50
+        .w = gs->player->sprite_size.x,
+        .h = gs->player->sprite_size.y
     };
     SDL_Rect dst_rect =
     {
         .x = gs->player->position.x,
         .y = gs->player->position.y,
-        .w = 50,
-        .h = 50
+        .w = gs->player->sprite_size.x,
+        .h = gs->player->sprite_size.y
     };
     SDL_RenderCopy(gs->renderer, gs->player_sprite, &src_rect, &dst_rect);
 }
@@ -79,8 +79,8 @@ void render_map(struct GameState *gs)
             struct Block blk = map->blocks[i * MAP_WIDTH + j];
             if (blk.type == EMPTY)
                 continue;
-            src_rect.x = blk.tilepos.x * src_rect.w;
-            src_rect.y = blk.tilepos.y * src_rect.h;
+            src_rect.x = blk.tilepos.x;
+            src_rect.y = blk.tilepos.y;
             dst_rect.x = j * dst_rect.w;
             dst_rect.y = i * dst_rect.h;
             SDL_RenderCopy(gs->renderer, gs->tileset, &src_rect, &dst_rect);

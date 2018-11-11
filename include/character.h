@@ -37,7 +37,7 @@ struct Character *init_player(void);
 struct Character *init_enemy(struct vector2 position, int health);
 
 void update_position(struct Character *character, enum action action,
-                     struct GameState *gs);
+                     struct GameState *gs, double dt_time);
 
 void delete_character(struct Character *character);
 
