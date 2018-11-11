@@ -1,6 +1,7 @@
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
+#include "character.h"
 #include "game.h"
 
 void render_buttons(SDL_Renderer *renderer)
@@ -47,53 +48,68 @@ void render_buttons(SDL_Renderer *renderer)
     SDL_DestroyTexture(texture_hud);
 }
 
-void render_fonts(SDL_Renderer *renderer)
+void screen_write(TTF_Font *font, const char *text, struct vector2 dst,
+           SDL_Renderer *renderer)
 {
     int text_w = 0;
     int text_h = 0;
 
-    TTF_Font *font = TTF_OpenFont("./resources/font/8bitlim.ttf", 50);
     SDL_Color black = {0, 0, 0, 255};
 
-    SDL_Surface *surface_play = TTF_RenderText_Solid(font, "PLAY", black);
-    SDL_Texture *texture_play = SDL_CreateTextureFromSurface(renderer,
-                                                             surface_play);
-    SDL_QueryTexture(texture_play, NULL, NULL, &text_w, &text_h);
+    SDL_Surface *surface_txt = TTF_RenderText_Solid(font, text, black);
+    SDL_Texture *texture_txt = SDL_CreateTextureFromSurface(renderer,
+                                                            surface_txt);
+    SDL_QueryTexture(texture_txt, NULL, NULL, &text_w, &text_h);
     SDL_Rect dst_rect_play =
     {
-        .x = 340,
-        .y = 295,
+        .x = dst.x,
+        .y = dst.y,
         .w = text_w,
         .h = text_h
     };
 
-    SDL_FreeSurface(surface_play);
-    SDL_RenderCopy(renderer, texture_play, NULL, &dst_rect_play);
-    SDL_DestroyTexture(texture_play);
+    SDL_FreeSurface(surface_txt);
+    SDL_RenderCopy(renderer, texture_txt, NULL, &dst_rect_play);
+    SDL_DestroyTexture(texture_txt);
+}
 
+void render_fonts(SDL_Renderer *renderer)
+{
+    //int text_w = 0;
+    //int text_h = 0;
 
-    SDL_Surface *surface_quit = TTF_RenderText_Solid(font, "QUIT", black);
-    SDL_Texture *texture_quit = SDL_CreateTextureFromSurface(renderer,
-                                                             surface_quit);
-    SDL_QueryTexture(texture_quit, NULL, NULL, &text_w, &text_h);
-    SDL_Rect dst_rect_quit =
+    TTF_Font *font = TTF_OpenFont("./resources/font/8bitlim.ttf", 50);
+
+    struct vector2 vec_play =
+    {
+        .x = 340,
+        .y = 295
+    };
+
+    struct vector2 vec_quit =
     {
         .x = 350,
-        .y = 415,
-        .w = text_w,
-        .h = text_h
+        .y = 415
     };
 
-    SDL_FreeSurface(surface_quit);
-    SDL_RenderCopy(renderer, texture_quit, NULL, &dst_rect_quit);
+    screen_write(font, "PLAY", vec_play, renderer);
+    screen_write(font, "QUIT", vec_quit, renderer);
+    TTF_CloseFont(font);
 
+    font = TTF_OpenFont("./resources/font/8bitlim.ttf", 80);
+    struct vector2 vec_title =
+    {
+        .x = 150,
+        .y = 100
+    };
+
+    screen_write(font, "PizzAdventure", vec_title, renderer);
     SDL_RenderPresent(renderer);
-    SDL_DestroyTexture(texture_quit);
     TTF_CloseFont(font);
 }
 
 
-void load_title_screen(SDL_Renderer *renderer)
+void load_layers(SDL_Renderer *renderer, Mix_Music *music_menu)
 {
     render_buttons(renderer);
     render_fonts(renderer);
@@ -104,6 +120,9 @@ void load_title_screen(SDL_Renderer *renderer)
 
     while(1)
     {
+        if (!Mix_PlayingMusic() && Mix_PlayMusic(music_menu, -1) == -1)
+            printf("Mix_PlayMusic: %s\n", Mix_GetError());
+
         SDL_PumpEvents();
         SDL_GetMouseState(&mouse_x, &mouse_y);
         SDL_PollEvent(&event);
@@ -116,4 +135,59 @@ void load_title_screen(SDL_Renderer *renderer)
             if (event.button.button == SDL_BUTTON(SDL_BUTTON_LEFT))
                 exit(2);
     }
+}
+
+void load_background(SDL_Renderer *renderer)
+{
+    //Print Title screen
+    SDL_Surface *img_title = IMG_Load(IMAGE_TITLE);
+    if(!img_title)
+        printf("IMG_Load: %s\n", IMG_GetError());
+    SDL_Texture *texture_title = SDL_CreateTextureFromSurface(renderer,
+            img_title);
+
+    SDL_Rect src_rect = {
+        .x = 0,
+        .y = 0,
+        .w = img_title->w,
+        .h = img_title->h
+    };
+
+    SDL_Rect dst_rect = {
+        .x = 0,
+        .y = 0,
+        .w = WINDOW_WIDTH,
+        .h = WINDOW_HEIGHT
+    };
+
+    SDL_FreeSurface(img_title);
+    SDL_RenderCopy(renderer, texture_title, &src_rect, &dst_rect);
+    SDL_RenderPresent(renderer);
+    SDL_DestroyTexture(texture_title);
+}
+
+void title_screen(SDL_Renderer *renderer)
+{
+    load_background(renderer);
+
+    Mix_Music *music_game_launch = Mix_LoadMUS(MUSIC_GAME_LAUNCH);
+    if(!music_game_launch)
+    {
+        printf("Mix_LoadMUS: %s\n", Mix_GetError());
+    }
+    if(Mix_PlayMusic(music_game_launch, 1) == -1)
+    {
+        printf("Mix_PlayMusic: %s\n", Mix_GetError());
+    }
+
+    Mix_Music *music_menu = Mix_LoadMUS(MUSIC_MENU);
+    if(!music_menu)
+    {
+        printf("Mix_LoadMUS: %s\n", Mix_GetError());
+    }
+
+    load_layers(renderer, music_menu);
+
+    Mix_FreeMusic(music_game_launch);
+    Mix_FreeMusic(music_menu);
 }
