@@ -29,6 +29,7 @@ struct Character
     struct vector2 position;
     float y_acc;
     int health;
+    struct vector2 sprite_size;
 };
 
 struct Character *init_player(void);
