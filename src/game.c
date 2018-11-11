@@ -11,8 +11,8 @@
 #include "game.h"
 #include "input.h"
 #include "map.h"
-#include "title.h"
 #include "render.h"
+#include "title.h"
 #include "update.h"
 
 void init_sdl(void)

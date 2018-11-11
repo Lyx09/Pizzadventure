@@ -1,4 +1,5 @@
 #include "character.h"
+#include "render.h"
 #include "map.h"
 
 #define BLOCK_SIZE 20
@@ -99,6 +100,22 @@ void update_position(struct Character *character, enum action action,
     {
         character->position.x += 0.18;
         character->status |= RUNNING;
+    }
+
+    if (gs->map->blocks[index].type == NEXT)
+    {
+        gs->player->position.x = gs->map->next->coords.x;
+        gs->player->position.y = gs->map->next->coords.y;
+        gs->map = generate_map(gs->map->next->path);
+        render_frame(gs);
+    }
+
+    if (gs->map->blocks[index].type == PREV)
+    {
+        gs->player->position.x = gs->map->prev->coords.x;
+        gs->player->position.y = gs->map->prev->coords.y;
+        gs->map = generate_map(gs->map->prev->path);
+        render_frame(gs);
     }
 
     if (!action)

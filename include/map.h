@@ -21,7 +21,9 @@ enum type
     EMPTY = 0,
     OPEN,
     SOLID,
-    HARMFUL
+    HARMFUL,
+    NEXT,
+    PREV
 };
 
 struct Block

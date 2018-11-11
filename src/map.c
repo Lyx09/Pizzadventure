@@ -20,6 +20,14 @@ static void set_block(struct Block *block, char type, float x, float y)
             block->type = HARMFUL;
             break;
 
+        case 'N':
+            block->type = NEXT;
+            break;
+
+        case 'P':
+            block->type = PREV;
+            break;
+
         default:
             block->type = OPEN;
     }
