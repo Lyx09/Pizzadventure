@@ -39,7 +39,9 @@ From the subject:
 Here is an exhaustive list of the features we implemented for our 2D-platformer:
 
 * A very basic title screen with music and title image,
-* A map parser,
+* A full map parser, that can display several tiles, and handle a spicific
+music, tileset, and backgroud for every map. As well as different points for
+changing maps.
 * WIP
 
 ### The map parser

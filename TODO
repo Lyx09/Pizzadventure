@@ -1,21 +1,21 @@
 # TODO
 
-- [ ] Main wrapper
-- [ ] Screen refresh
+- [X] Main wrapper
+- [X] Screen refresh
 - [ ] Update
-- [x] Map parser
+- [X] Map parser
 
 ## Core feature
 
 - [X] Input
 - [/] Player
 - [/] Movements
-- [ ] Rooms
+- [X] Rooms
 - [ ] Enemies (opponent, danger)
 - [ ] Dummy enemy A.I.
 - [ ] Life points / damage
 - [ ] Game over
-- [ ] Maps
+- [X] Maps
 
 ## Additional feature
 
