@@ -59,7 +59,8 @@ Here is an exhaustive list of the features we implemented for our 2D-platformer:
 * A full map parser, that can display several tiles, and handle a specific
 music, tileset and background for every map, as well as different points for
 changing maps,
-* A character able to move left and right.
+* A character able to move left and right and jump.
+* The game handles delta timing (Game does not depend on computer's speed).
 
 ### The map parser
 
