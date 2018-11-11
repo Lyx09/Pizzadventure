@@ -23,11 +23,14 @@ $(GAME): ${OBJ}
 list:
 	$(CC) $(CFLAGS) $(LDLIBS) -o list tests/list_test.c src/list.c
 
+map:
+	$(CC) $(CFLAGS) $(LDLIBS) -o map tests/map_test.c src/map.c src/list.c
+
 check:
 	tests/test.sh $(commands)
 
 clean:
 	$(RM) $(GAME) $(OBJ)
-	$(RM) list
+	$(RM) list map
 
 .PHONY: all check clean
