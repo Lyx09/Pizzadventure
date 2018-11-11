@@ -26,23 +26,39 @@ following command: `make check`.
 
 ## How to play
 
-A few sentences on how to play the game, what are the controls and maybe some
-game story.
+The player character is a pizza delivery guy that has to deliver an order to
+the demon king at his castle.
+
+The goal in each level is to reach a checkpoint that will allow the player to
+go on to the next level.
+
+The game is supposed to be played using the keyboard, using the directional
+pad to move, the space bar to jump and the key 'x' to attack.
 
 ## Sources
 
-From the subject:
-> The different sources used (for the sprites, sounds and other resources).
+Unfortunately, we did not keep track of all the sites we visited for our
+resources. Here are a few websites we visited to get them:
+
+* https://www.spriters-resources.com/
+* https://opengameart.org
+* https://itch.io/
+* https://www.google.com/
+* etc.
+
+Credits where credit is due, none of the art nor sound we used were made by us.
+Thanks to all the artists who have contributed directly or (mostly) indirectly
+to our work.
 
 ## Features
 
 Here is an exhaustive list of the features we implemented for our 2D-platformer:
 
 * A very basic title screen with music and title image,
-* A full map parser, that can display several tiles, and handle a spicific
-music, tileset, and backgroud for every map. As well as different points for
-changing maps.
-* WIP
+* A full map parser, that can display several tiles, and handle a specific
+music, tileset and background for every map, as well as different points for
+changing maps,
+* A character able to move left and right.
 
 ### The map parser
 
