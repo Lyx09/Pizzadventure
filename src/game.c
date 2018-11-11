@@ -123,9 +123,9 @@ void cleanup(SDL_Window *window, SDL_Renderer *renderer)
 double delta_time(struct GameState *gs)
 {
     double frequency = SDL_GetPerformanceFrequency();
-    uint64_t last = *(gs->last_update_time);
+    uint64_t last = gs->last_update_time;
     uint64_t now = SDL_GetPerformanceCounter();
-    *(gs->last_update_time) = now;
+    gs->last_update_time = now;
     return (now - last) * 1000 / frequency;
 }
 
@@ -166,7 +166,7 @@ int main(void)
         #ifdef DEBUG
         printf("ACTION: %d\n", action);
         #endif
-        update(&gs, action, delta_time(gs));
+        update(&gs, action, delta_time(&gs));
         render_frame(&gs);
     }
 
