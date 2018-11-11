@@ -20,10 +20,14 @@ all: $(GAME)
 $(GAME): ${OBJ}
 	$(CC) $(CFLAGS) $(LDLIBS) -o $@ $^
 
+list:
+	$(CC) $(CFLAGS) $(LDLIBS) -o list tests/list_test.c src/list.c
+
 check:
 	tests/test.sh $(commands)
 
 clean:
 	$(RM) $(GAME) $(OBJ)
+	$(RM) list
 
 .PHONY: all check clean
