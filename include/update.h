@@ -4,6 +4,6 @@
 #include "game.h"
 #include "input.h"
 
-void update(struct GameState *gs, enum action action);
+void update(struct GameState *gs, enum action action, double dt_time);
 
 #endif /* ! UPDATE_H */

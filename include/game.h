@@ -19,7 +19,7 @@ struct GameState
     struct Map *map;
     struct Character *player;
     int is_on;
-    uint64_t *last_update_time;
+    uint64_t last_update_time;
     //Textures
     SDL_Texture *player_sprite;
     SDL_Texture *tileset; //Add multiples?
