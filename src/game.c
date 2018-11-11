@@ -34,11 +34,13 @@ SDL_Window *new_window(void)
             WINDOW_WIDTH,
             WINDOW_HEIGHT,
             SDL_WINDOW_BORDERLESS); //idk
+
     if (window == NULL)
     {
         printf("Could not open window: %s\n", SDL_GetError());
         exit(1);
     }
+
     return window;
 }
 
@@ -48,6 +50,7 @@ void init_img(void)
     IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
     int img_flags = IMG_INIT_JPG | IMG_INIT_PNG;
     int initialized = IMG_Init(img_flags);
+
     if ((initialized & img_flags) != img_flags)
     {
         printf("IMG_Init: %s\n", IMG_GetError());
@@ -69,6 +72,7 @@ void init_mix(void)
     //Init mix
     int mix_flags = MIX_INIT_MP3 | MIX_INIT_OGG;
     int mix_ret = Mix_Init(mix_flags);
+
     if((mix_ret & mix_flags) != mix_flags)
     {
         printf("Mix_Init: %s\n", Mix_GetError());
@@ -114,8 +118,10 @@ void cleanup(SDL_Window *window, SDL_Renderer *renderer)
     IMG_Quit();
     Mix_CloseAudio();
     TTF_Quit();
+
     while(Mix_Init(0))
         Mix_Quit();
+
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
@@ -161,11 +167,12 @@ int main(void)
     while (gs.is_on)
     {
         enum action action = get_input(state);
+
         if (action & ESCAPE)
             gs.is_on = 0;
-        #ifdef DEBUG
+#ifdef DEBUG
         printf("ACTION: %d\n", action);
-        #endif
+#endif
         update(&gs, action, delta_time(&gs));
         render_frame(&gs);
     }

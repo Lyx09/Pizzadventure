@@ -77,8 +77,10 @@ void render_map(struct GameState *gs)
         for (int j = 0; j < MAP_WIDTH; j++)
         {
             struct Block blk = map->blocks[i * MAP_WIDTH + j];
+
             if (blk.type == EMPTY)
                 continue;
+
             src_rect.x = blk.tilepos.x * src_rect.w;
             src_rect.y = blk.tilepos.y * src_rect.h;
             dst_rect.x = j * dst_rect.w;
