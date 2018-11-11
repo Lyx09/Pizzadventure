@@ -151,6 +151,7 @@ int main(void)
         .player_sprite = get_texture(renderer, PLAYER_SPRITE),
         .tileset = get_texture(renderer, map->tileset),
         .background = get_texture(renderer, map->background),
+        .last_update_time = 0,
         .enemy_sprites = NULL
     };
 
@@ -158,13 +159,14 @@ int main(void)
     //SDL_RenderClear(renderer);
     const Uint8 *state = SDL_GetKeyboardState(NULL);
 
+    gs.last_update_time = SDL_GetPerformanceCounter();
     while (gs.is_on)
     {
         enum action action = get_input(state);
         if (action & ESCAPE)
             gs.is_on = 0;
         #ifdef DEBUG
-        printf("ACTION: %d\n", action);
+        //printf("ACTION: %d\n", action);
         #endif
         update(&gs, action, delta_time(&gs));
         render_frame(&gs);

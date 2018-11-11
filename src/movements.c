@@ -16,7 +16,7 @@
 float apply_gravity(struct Character *character, struct GameState *gs,
                     double dt_time)
 {
-    dt_time = 0.7;
+    printf("DELTA TIME: %f\n", dt_time);
     float x = character->position.x; // Accurate cast ?
     float y = character->position.y;
     float g = 5 + character->y_acc;
