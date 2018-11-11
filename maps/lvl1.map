@@ -5,17 +5,18 @@ background:     ./resources/background/dungeon.png
 tileset:        ./resources/tileset/tileset.png
 tilesize:       (16, 16)
 
-10
-P: O(0,6)
-N: O(0,6)
-I: S(2,0)
-H: S(0,0)
-G: S(2,5)
-F: S(1,0)
-E: S(2,7)
-D: S(1,7)
-C: S(0,7)
+11
 B: S(1,9)
+C: S(0,7)
+D: S(1,7)
+E: S(2,7)
+F: S(1,0)
+G: S(2,5)
+H: S(0,0)
+I: S(2,0)
+K: S(0,18)
+N: O(0,6)
+P: O(0,6)
 _
                                        N
                                       CC
@@ -45,5 +46,5 @@ HFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFI
                  CC         CC  CCE     
  P                          CC          
 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
