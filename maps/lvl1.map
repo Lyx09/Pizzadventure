@@ -1,7 +1,7 @@
 prev:           ./maps/lvl3.map (0,0)
 next:           ./maps/lvl2.map (0,0)
 music:          ./resources/music/happy_adventure.mp3
-background:     ./resources/background/dungeon.png
+background:     ./resources/background/outdoors.png
 tileset:        ./resources/tileset/tileset.png
 tilesize:       (16, 16)
 
