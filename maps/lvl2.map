@@ -19,32 +19,32 @@ N: O(0,6)
 P: O(0,6)
 _
                                         
-                                       N
-                                     CDC
-            CC  C                   CCCD
-           ECC  CC                 CECCC
-          CCCD  DCC            CD CCDCEC
-         CDECC  CDCC           CCECCCCCC
-HFFFI  HFFFFFI  HFFFFFFFFFFFFFFFFFFFFFFI
+ P                                      
+HFFFI                                   
+    GG                                  
+     GG                                 
+      HFFFFFFFFFFFFFFFFFFFFFFFFI        
+                                        
+                                  GGGGGG
+                                 GGGGGGG
+                                GGGGGGGG
+                               GGGGGGGGG
+                              GGGGGGGGGG
+                 GGGGGGGGGGGGGGGGGGGGGGG
                                         
                                         
-      HFFFI        HFFFFFI              
-HFFI       G                 C C        
-            HFFFI           CE CC       
-   HFFFI         G         EDC CEC      
-                  HFFFFFFFFFFFFFFFI  HFI
-          HFFI                     G    
-              GG                        
-              GGG                     GG
-              GGGG                   HFI
-              GGGGG                     
-HFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFI     
-                                     CC 
-                                    CC  
-                                  CDE   
-                   CDCDECC       CDC    
-                 CC         CC  CCE     
- P                          CC          
+GGGGGGGGGGGGGGGG                        
+                G                       
+                 G                      
+                  G                     
+                   G                    
+                    G                   
+                     G                  
+                      G                 
+                       G                
+                        G             N 
+                         GGGGGGGGGGGGGGG
+                                        
 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
