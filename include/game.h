@@ -7,6 +7,7 @@
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 #define MUSIC_GAME_LAUNCH "./resources/music/gba.mp3"
+#define MUSIC_MENU "./resources/music/happy_adventure.mp3"
 #define MUSIC_INTRO ""
 #define IMAGE_TITLE "./resources/background/menu.jpg"
 #define SPAWN_MAP "./maps/lvl0.map"
