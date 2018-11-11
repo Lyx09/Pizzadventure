@@ -13,6 +13,7 @@
 #include "map.h"
 #include "title.h"
 #include "render.h"
+#include "update.h"
 
 void init_sdl(void)
 {
@@ -154,7 +155,7 @@ int main(void)
         #ifdef DEBUG
         printf("ACTION: %d\n", action);
         #endif
-        //update(&game, user_input);
+        update(&gs, action);
         render_frame(&gs);
     }
 
