@@ -119,53 +119,6 @@ void cleanup(SDL_Window *window, SDL_Renderer *renderer)
     SDL_Quit();
 }
 
-void title_screen(SDL_Renderer *renderer)
-{
-    //Print Title screen
-    SDL_Surface *img_title = IMG_Load(IMAGE_TITLE);
-    if(!img_title)
-        printf("IMG_Load: %s\n", IMG_GetError());
-    SDL_Texture *texture_title = SDL_CreateTextureFromSurface(renderer,
-            img_title);
-
-    SDL_Rect src_rect = {
-        .x = 0,
-        .y = 0,
-        .w = img_title->w,
-        .h = img_title->h
-    };
-
-    SDL_Rect dst_rect = {
-        .x = 0,
-        .y = 0,
-        .w = WINDOW_WIDTH,
-        .h = WINDOW_HEIGHT
-    };
-
-    SDL_FreeSurface(img_title);
-    SDL_RenderCopy(renderer, texture_title, &src_rect, &dst_rect);
-    SDL_RenderPresent(renderer);
-
-    //Launch Intro Music
-    Mix_Music *music_game_launch = Mix_LoadMUS(MUSIC_GAME_LAUNCH);
-    if(!music_game_launch)
-    {
-        printf("Mix_LoadMUS: %s\n", Mix_GetError());
-    }
-    if(Mix_PlayMusic(music_game_launch, 1) == -1)
-    {
-        printf("Mix_PlayMusic: %s\n", Mix_GetError());
-    }
-
-    //while (Mix_PlayingMusic())
-    //    SDL_Delay(100);
-
-    load_title_screen(renderer);
-
-    Mix_FreeMusic(music_game_launch);
-    SDL_DestroyTexture(texture_title);
-}
-
 int main(void)
 {
     SDL_Window *window;
