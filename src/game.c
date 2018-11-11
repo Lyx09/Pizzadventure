@@ -9,6 +9,7 @@
 
 #include "character.h"
 #include "input.h"
+#include "title.h"
 #include "game.h"
 
 void init_sdl(void)
@@ -124,7 +125,6 @@ void title_screen(SDL_Renderer *renderer)
         printf("IMG_Load: %s\n", IMG_GetError());
     SDL_Texture *texture_title = SDL_CreateTextureFromSurface(renderer,
             img_title);
-    SDL_FreeSurface(img_title);
 
     SDL_Rect src_rect = {
         .x = 0,
@@ -139,6 +139,8 @@ void title_screen(SDL_Renderer *renderer)
         .w = WINDOW_WIDTH,
         .h = WINDOW_HEIGHT
     };
+
+    SDL_FreeSurface(img_title);
     SDL_RenderCopy(renderer, texture_title, &src_rect, &dst_rect);
     SDL_RenderPresent(renderer);
 
@@ -153,10 +155,10 @@ void title_screen(SDL_Renderer *renderer)
         printf("Mix_PlayMusic: %s\n", Mix_GetError());
     }
 
-    while (Mix_PlayingMusic())
-        SDL_Delay(100);
+    //while (Mix_PlayingMusic())
+    //    SDL_Delay(100);
 
-    //FIXME Display main menu here
+    load_title_screen(renderer);
 
     Mix_FreeMusic(music_game_launch);
     SDL_DestroyTexture(texture_title);
