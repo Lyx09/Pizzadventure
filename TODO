@@ -3,6 +3,7 @@
 - [ ] Main wrapper
 - [ ] Screen refresh
 - [ ] Update
+- [x] Map parser
 
 ## Core feature
 
@@ -14,6 +15,7 @@
 - [ ] Dummy enemy A.I.
 - [ ] Life points / damage
 - [ ] Game over
+- [ ] Maps
 
 ## Additional feature
 

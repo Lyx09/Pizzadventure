@@ -24,7 +24,6 @@ root of the project directory. To remove it, please run `make clean`.
 To run the tests for each individual functions on this project, please use the
 following command: `make check`.
 
-
 ## How to play
 
 A few sentences on how to play the game, what are the controls and maybe some
@@ -39,8 +38,82 @@ From the subject:
 
 Here is an exhaustive list of the features we implemented for our 2D-platformer:
 
-* Very basic title screen with music and title image
+* A very basic title screen with music and title image,
+* A map parser,
 * WIP
+
+### The map parser
+
+One of the features we developped is a map parser, which takes an input file
+of the following format:
+
+```
+prev:           ./maps/lvl0 (1, 2)
+next:           ./maps/lvl2 (3, 4)
+music:          ./resources/music/lvl1
+background:     ./resources/background/lvl1
+tileset:        ./resources/tileset/lvl1
+tilesize:       (5, 6)
+
+4
+P: O(7,8)
+N: O(9,10)
+B: S(11,12)
+C: H(13,14)
+_
+ C                                     C
+                                     N C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+ P                                     C
+                                       C
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+```
+
+The first and second lines are two paths respectively towards the map of the
+previous and next level, with the corresponding coordinates where the player
+should spawn.
+
+The third line is the path of the music file, while the fourth line corresponds
+to the background.
+
+The fifth line is the path to the tileset used for the level, and the sixth
+corresponds to the size of one tile on the tileset sheet under the form of a
+tuple.
+
+After a newline, there should be a number n indicating the different types of
+tile on the map. Then, there should be exactly n lines representing the types
+of the different tiles, the type of block it corresponds to and its coordinates
+relative to the tileset sheet. The tile's type cannot be represented by ' ',
+'\t', '\n', 'E', 'O', 'S' nor 'H' since they are either forbidden or used to
+represent the block type ('E' -> empty block, 'O' -> open block, 'S' -> solid
+block, 'H' -> harmful block).
+
+Finally, an underscore character separates the header from the map represented
+by 40 * 30 characters extracted from the previous lines's type of tile.
 
 ## Authors
 

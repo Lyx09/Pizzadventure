@@ -1,0 +1,43 @@
+prev:           ./maps/lvl0 (1, 2)
+next:           ./maps/lvl2 (3, 4)
+music:          ./resources/music/lvl1
+background:     ./resources/background/lvl1
+tileset:        ./resources/tileset/lvl1
+tilesize:       (5, 6)
+
+4
+P: O(7,8)
+N: O(9,10)
+B: S(11,12)
+C: H(13,14)
+_
+ C                                     C
+                                     N C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+                                       C
+ P                                     C
+                                       C
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
