@@ -79,8 +79,8 @@ void render_map(struct GameState *gs)
             struct Block blk = map->blocks[i * MAP_WIDTH + j];
             if (blk.type == EMPTY)
                 continue;
-            src_rect.x = blk.tilepos.x;
-            src_rect.y = blk.tilepos.y;
+            src_rect.x = blk.tilepos.x * src_rect.w;
+            src_rect.y = blk.tilepos.y * src_rect.h;
             dst_rect.x = j * dst_rect.w;
             dst_rect.y = i * dst_rect.h;
             SDL_RenderCopy(gs->renderer, gs->tileset, &src_rect, &dst_rect);
