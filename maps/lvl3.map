@@ -1,5 +1,5 @@
-prev:           ./maps/lvl2.map (0,0)
-next:           ./maps/lvl4.map (0,0)
+prev:           ./maps/lvl2.map (37,27)
+next:           ./maps/lvl4.map (2,37)
 music:          ./resources/music/happy_adventure.mp3
 background:     ./resources/background/glacial_mountains.png
 tileset:        ./resources/tileset/tileset.png
@@ -12,9 +12,9 @@ C: S(2,1)
 E: S(2,2)
 G: S(1,0)
 I: S(0,14)
-N: O(0,0)
+N: N(0,6)
 O: S(1,14)
-P: O(0,0)
+P: P(0,6)
 R: S(0,1)
 S: H(0,4)
 U: O(1,8)
@@ -45,9 +45,9 @@ _
                                    IOOOO
                                    IOOOO
                                    IOOOO
-                                   IOOOO
-                                   IOOOO
-P        Y     U                  NIOOOO
+                                  NIOOOO
+ P                                 IOOOO
+         Y     U                   IOOOO
 GGGGGGGGGGGGGGGGGGGGGCWWWWWWWWWRGGGGGGGG
 BBBBBBBBBBBBBBBBBBBBBE         ABBBBBBBB
 BBBBBBBBBBBBBBBBBBBBBESSSSSSSSSABBBBBBBB

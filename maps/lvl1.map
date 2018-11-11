@@ -1,5 +1,5 @@
-prev:           ./maps/lvl5.map (0,0)
-next:           ./maps/lvl2.map (0,0)
+prev:           ./maps/lvl5.map (37,15)
+next:           ./maps/lvl2.map (0,1)
 music:          ./resources/music/happy_adventure.mp3
 background:     ./resources/background/outdoors.png
 tileset:        ./resources/tileset/tileset.png
@@ -15,14 +15,14 @@ G: S(2,5)
 H: S(0,0)
 I: S(2,0)
 K: S(0,18)
-N: O(0,6)
-P: O(0,6)
+N: N(0,6)
+P: P(0,6)
 _
 HFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFI     
                                         
                                      CDC
-            CC  C                   CCCD
-           ECC  CC              N  CECCC
+            CC  C             N     CCCD
+           ECC  CC                 CECCC
           CCCD  DCC            CD CCDCEC
          CDECC  CDCC           CCECCCCCC
 HFFFI  HFFFFFI  HFFFFFFFFFFFFFFFFFFFFFFI
@@ -43,8 +43,8 @@ HFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFI
                                     CC  
                    CDCDECC        CDE   
                  CC              CDC    
-                            CC  CCE     
- P                          CC CC       
+ P                          CC  CCE     
+                            CC CC       
 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
