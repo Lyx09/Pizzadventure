@@ -23,19 +23,29 @@ float apply_gravity(struct Character *character, struct GameState *gs)
     int fall = speed * delta_time;
     character->y_acc += y >= 0 ? -y : g * delta_time;
 
-    enum type nxt_blk= gs->map->blocks[x * BLOCK_SIZE + WINDOW_WIDTH *
-        fall * BLOCK_SIZE].type;
-    if (nxt_blk <= OPEN) //empty or open
+    int block_x = (x * BLOCK_SIZE + character->sprite_size.x / 2) / 40;
+    int block_y = fall * BLOCK_SIZE;
+    block_y += character->y_acc ? character->sprite_size.y : 0;
+    block_y /= 30;
+    int index = block_x + WINDOW_WIDTH * block_y;
+
+    if (gs->map->blocks[index].type <= OPEN) //empty or open
         return fall;
 
     if (character->y_acc)
+    {
+        character->y_acc = 0;
         return y;
+    }
 
     int i = 1;
-    while (gs->map->blocks[x * BLOCK_SIZE + WINDOW_WIDTH * (y - i) *
-            BLOCK_SIZE].type <= OPEN)
+    block_y = (y - i) * BLOCK_SIZE / 30;
+    index = block_x + WINDOW_WIDTH * block_y;
+    while (gs->map->blocks[index].type <= OPEN)
     {
         i++;
+        block_y = (y - i) * BLOCK_SIZE / 30;
+        index = block_x + WINDOW_WIDTH * block_y;
     }
 
     character->status = IDLE;
@@ -45,9 +55,11 @@ float apply_gravity(struct Character *character, struct GameState *gs)
 void update_position(struct Character *character, enum action action,
                      struct GameState *gs)
 {
-    float x = character->position.x;
-    float y = character->position.y;
-    int index = x * BLOCK_SIZE + WINDOW_WIDTH * (y + 1) * BLOCK_SIZE;
+    int x = character->position.x;
+    int y = character->position.y;
+    int block_x = x * BLOCK_SIZE /40;
+    int block_y = (y + character->sprite_size.y + 1) * BLOCK_SIZE / 30;
+    int index = block_x + WINDOW_WIDTH * block_y;
 
     if (action & JUMP && gs->map->blocks[index].type != OPEN)
     {
@@ -55,18 +67,21 @@ void update_position(struct Character *character, enum action action,
         character->status |= JUMPING;
     }
 
-    if (character->status & JUMP || gs->map->blocks[index].type == OPEN)
+    if (character->status & JUMP || gs->map->blocks[index].type <= OPEN)
         character->position.y += apply_gravity(character, gs);
 
-    index = (x - 1) * BLOCK_SIZE + WINDOW_WIDTH * y * BLOCK_SIZE;
-    if ((action & LEFT) && gs->map->blocks[index].type == OPEN)
+    block_x = (x - 1) * BLOCK_SIZE / 40;
+    block_y = y * BLOCK_SIZE / 30;
+    index = block_x + WINDOW_WIDTH * block_y;
+    if ((action & LEFT) && gs->map->blocks[index].type <= OPEN)
     {
         character->position.x -= 1;
         character->status |= RUNNING;
     }
 
-    index = (x + 1) * BLOCK_SIZE + WINDOW_WIDTH * y * BLOCK_SIZE;
-    if ((action & RIGHT) && gs->map->blocks[index].type == OPEN)
+    block_x = (x + character->sprite_size.x) * BLOCK_SIZE / 40;
+    index = block_x + WINDOW_WIDTH * block_y;
+    if ((action & RIGHT) && gs->map->blocks[index].type <= OPEN)
     {
         character->position.x += 1;
         character->status |= RUNNING;
