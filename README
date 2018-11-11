@@ -45,6 +45,7 @@ resources. Here are a few websites we visited to get them:
 * https://opengameart.org/
 * https://itch.io/
 * https://www.google.com/
+* https://www.1001fonts.com/8-bit-limit-font.html
 * etc.
 
 Credits where credit is due, none of the art nor sound we used were made by us.
@@ -55,7 +56,7 @@ to our work.
 
 Here is an exhaustive list of the features we implemented for our 2D-platformer:
 
-* A very basic title screen with music and title image,
+* A basic title screen with music and title image,
 * A full map parser, that can display several tiles, and handle a specific
 music, tileset and background for every map, as well as different points for
 changing maps,
