@@ -1,3 +1,4 @@
+#include <SDL_image.h>
 #include "game.h"
 #include "map.h"
 #include "render.h"
@@ -6,12 +7,34 @@ void render_frame(struct GameState *gs)
 {
     render_map(gs);
     //Render everything
-    SDL_RenderPresent(renderer);
+    SDL_RenderPresent(gs->renderer);
+}
+
+void render_bg(struct GameState *gs)
+{
+    int texture_w, texture_h;
+    SDL_QueryTexture(gs->background, NULL, NULL, &texture_w, &texture_h);
+    SDL_Rect src_rect =
+    {
+        .x = 0,
+        .y = 0,
+        .w = texture_w,
+        .h = texture_h
+    };
+    SDL_Rect dst_rect =
+    {
+        .x = 0,
+        .y = 0,
+        .w = texture_w, // :/
+        .h = texture_h
+    };
+    SDL_RenderCopy(gs->renderer, gs->background, &src_rect, &dst_rect);
 }
 
 void render_map(struct GameState *gs)
 {
-    //SDL_RenderClear(renderer);
+    //SDL_RenderClear(renderer); ?
+    render_bg(gs);
     struct Map *map = gs->map;
     SDL_Rect src_rect =
     {
@@ -26,7 +49,7 @@ void render_map(struct GameState *gs)
         .y = 0,
         .w = WINDOW_WIDTH / 40, // :/
         .h = WINDOW_HEIGHT / 30
-    }
+    };
 
     for (int i = 0; i < MAP_HEIGHT; i++)
     {
@@ -39,15 +62,15 @@ void render_map(struct GameState *gs)
             src_rect.y = blk.tilepos.y;
             dst_rect.x = j * dst_rect.w;
             dst_rect.y = i * dst_rect.h;
-            SDL_RenderCopy(gs.renderer, gs.tileset, &src_rect, &dst_rect);
+            SDL_RenderCopy(gs->renderer, gs->tileset, &src_rect, &dst_rect);
         }
     }
 }
 
-SDL_Texture *get_texture(char *file)
+SDL_Texture *get_texture(SDL_Renderer *renderer, char *file)
 {
     SDL_Surface *surf = IMG_Load(file);
-    SDL_Surface *texture = IMG_Load(IMAGE_TITLE);
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surf);
     SDL_FreeSurface(surf);
     return texture;
 }

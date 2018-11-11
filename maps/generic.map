@@ -1,8 +1,8 @@
 prev:           ./maps/lvl0 (1, 2)
 next:           ./maps/lvl2 (3, 4)
 music:          ./resources/music/lvl1
-background:     ./resources/background/lvl1
-tileset:        ./resources/tileset/lvl1
+background:     ./resources/background/plain.jpg
+tileset:        ./resources/sprites/pizzaboi.png
 tilesize:       (5, 6)
 
 4

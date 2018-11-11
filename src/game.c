@@ -8,9 +8,11 @@
 #endif
 
 #include "character.h"
-#include "input.h"
-#include "title.h"
 #include "game.h"
+#include "input.h"
+#include "map.h"
+#include "title.h"
+#include "render.h"
 
 void init_sdl(void)
 {
@@ -178,13 +180,15 @@ int main(void)
         .player = player,
         .renderer = renderer,
         .map = map,
-        .is_on = 1
-        .player_sprite = get_texture(PLAYER_SPRITE),
-        .tileset = get_texture(map->tileset),
+        .is_on = 1,
+        .player_sprite = get_texture(renderer, PLAYER_SPRITE),
+        .tileset = get_texture(renderer, map->tileset),
+        .background = get_texture(renderer, map->background),
         .enemy_sprites = NULL
     };
 
     title_screen(renderer);
+    //SDL_RenderClear(renderer);
     const Uint8 *state = SDL_GetKeyboardState(NULL);
 
     while (gs.is_on)
@@ -195,9 +199,8 @@ int main(void)
         #ifdef DEBUG
         printf("ACTION: %d\n", action);
         #endif
-        //struct Input user_input = get_input();
         //update(&game, user_input);
-        //render_frame(game);
+        render_frame(&gs);
     }
 
     //Show game over screen ?
