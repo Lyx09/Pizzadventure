@@ -10,7 +10,7 @@
 #define PLAYER_SPRITE_Y 35
 #define MUSIC_GAME_LAUNCH "./resources/music/gba.mp3"
 #define MUSIC_MENU "./resources/music/happy_adventure.mp3"
-#define IMAGE_TITLE "./resources/background/cyberpunk-street.png"
+#define IMAGE_TITLE "./resources/background/title.jpg"
 #define SPAWN_MAP "./maps/lvl1.map"
 #define PLAYER_SPRITE "./resources/sprites/pizzaboi.png"
 
