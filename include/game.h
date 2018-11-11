@@ -8,7 +8,7 @@
 #define WINDOW_HEIGHT 600
 #define MUSIC_GAME_LAUNCH "./resources/music/gba.mp3"
 #define MUSIC_INTRO ""
-#define IMAGE_TITLE "./resources/background/cyberpunk-street.png"
+#define IMAGE_TITLE "./resources/background/menu.jpg"
 #define SPAWN_MAP "./maps/lvl0.map"
 
 struct GameState
