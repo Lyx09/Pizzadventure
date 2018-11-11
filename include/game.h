@@ -10,7 +10,7 @@
 #define MUSIC_MENU "./resources/music/happy_adventure.mp3"
 #define MUSIC_INTRO ""
 #define IMAGE_TITLE "./resources/background/cyberpunk-street.png"
-#define SPAWN_MAP "./maps/generic.map"
+#define SPAWN_MAP "./maps/lvl1.map"
 #define PLAYER_SPRITE "./resources/sprites/pizzaboi.png"
 
 struct GameState

@@ -1,43 +1,49 @@
-prev:           ./maps/lvl0 (1, 2)
-next:           ./maps/lvl2 (3, 4)
-music:          ./resources/music/lvl1
-background:     ./resources/background/plain.jpg
-tileset:        ./resources/sprites/pizzaboi.png
-tilesize:       (5, 6)
+prev:           ./maps/lvl1 (0,0)
+next:           ./maps/lvl1 (0,0)
+music:          ./resources/music/happy_adventure.mp3
+background:     ./resources/background/dungeon.png
+tileset:        ./resources/tileset/tileset.png
+tilesize:       (16, 16)
 
-4
-P: O(7,8)
-N: O(9,10)
-B: S(11,12)
-C: H(13,14)
+10
+P: O(0,6)
+N: O(0,6)
+I: S(2,0)
+H: S(0,0)
+G: S(2,5)
+F: S(1,0)
+E: S(2,7)
+D: S(1,7)
+C: S(0,7)
+B: S(1,9)
 _
- C                                     C
-                                     N C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
-                                       C
- P                                     C
-                                       C
+                                       N
+                                      CC
+                                     CDC
+            CC  C                   CCCD
+           ECC  CC                 CECCC
+          CCCD  DCC            CD CCDCEC
+         CDECC  CDCC           CCECCCCCC
+HFFFI  HFFFFFI  HFFFFFFFFFFFFFFFFFFFFFFI
+                                        
+                                        
+      HFFFI        HFFFFFI              
+HFFI       G                 C C        
+            HFFFI           CE CC       
+   HFFFI         G         EDC CEC      
+                  HFFFFFFFFFFFFFFFI  HFI
+          HFFI                          
+              GG                  GG    
+              GGG                     GG
+              GGGG                   HFI
+              GGGGG                     
+HFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFI    
+                                     CC 
+                                    CC  
+                                  CDE   
+                   CDCDECC       CDC    
+                 CC         CC  CCE     
+ P                          CC          
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
