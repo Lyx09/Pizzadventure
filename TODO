@@ -2,17 +2,18 @@
 
 - [X] Main wrapper
 - [X] Screen refresh
-- [ ] Update
+- [X] Update
 - [X] Map parser
-- [ ] Music
+- [X] Music
 - [ ] Dialog
 - [ ] SFX
+- [X] Delta timing
 
 ## Core feature
 
 - [X] Input
-- [/] Player
-- [/] Movements
+- [X] Player
+- [X] Movements
 - [X] Rooms
 - [ ] Enemies (opponent, danger)
 - [ ] Dummy enemy A.I.

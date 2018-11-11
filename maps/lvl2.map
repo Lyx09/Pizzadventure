@@ -1,7 +1,7 @@
-prev:           ./maps/lvl3.map (0,0)
-next:           ./maps/lvl2.map (0,0)
+prev:           ./maps/lvl1.map (0,0)
+next:           ./maps/lvl3.map (0,0)
 music:          ./resources/music/happy_adventure.mp3
-background:     ./resources/background/dungeon.png
+background:     ./resources/background/outdoors.png
 tileset:        ./resources/tileset/tileset.png
 tilesize:       (16, 16)
 
@@ -29,22 +29,22 @@ HFFFI
                                  GGGGGGG
                                 GGGGGGGG
                                GGGGGGGGG
-                              GGGGGGGGGG
+                  GGGGGGGGGGGGGGGGGGGGGG
                  GGGGGGGGGGGGGGGGGGGGGGG
                                         
                                         
 GGGGGGGGGGGGGGGG                        
-                G                       
-                 G                      
-                  G                     
-                   G                    
-                    G                   
-                     G                  
-                      G                 
-                       G                
-                        G             N 
-                         GGGGGGGGGGGGGGG
-                                        
+GGGGGGGGGGGGGGGGG                       
+                GG                      
+                 GG                     
+                  GG                    
+                   GG                   
+                    GG                  
+                     GG                 
+                      GG                
+                       GG               
+                        GG              
+                         GG           N 
 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK

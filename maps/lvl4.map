@@ -1,0 +1,50 @@
+prev:           ./maps/lvl3.map (0,0)
+next:           ./maps/lvl5.map (0,0)
+music:          ./resources/music/happy_adventure.mp3
+background:     ./resources/background/dungeon.png
+tileset:        ./resources/tileset/tileset.png
+tilesize:       (16, 16)
+
+11
+B: S(1,9)
+C: S(0,7)
+D: S(1,7)
+E: S(2,7)
+F: S(1,0)
+G: S(2,5)
+H: S(0,0)
+I: S(2,0)
+K: S(0,18)
+N: O(0,6)
+P: O(0,6)
+_
+    KKKK            KKKKKKKKKKKKKKKKKKKK
+      KKKKK N                    KKKKKKK
+        KKKKKKK                    KKKKK
+         KKKKKKKKKKKKK              KKKK
+                    KKK   KK         KKK
+                    KK    KK         KKK
+ KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK  KKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK   KKKKK
+KK                                KKKKKK
+KK                              KKKKKKKK
+KK                            KKKKKKKKKK
+KKKKK          KKKKKKKKKKKKKKKKKKKKKKKKK
+KKKKKKK     KKKKKKKKKKKKKKKKKKKKKKKKKKKK
+          KKKK                          
+         KK                             
+                                        
+                    KKKKKKKKKKKKKKKKKKKK
+KKKKKKKK            KKKKKKKKKKKKKKKKKKKK
+  KKKKKKKKK                           KK
+    KKKKKKKKKK                        KK
+     KKKKKKKKKKKKKKKKKK               KK
+      KKKKKKKKKKKKKKKKKKK       KKKKKKK 
+                        KK     KKKKKKK  
+                             KK         
+                            KK          
+P                   KK                  
+KK                 KKK                  
+KK    K  KK  KK  KKKKKK    KKKKKKKKKKKKK
+KKK  KK  KK  KK  KKKKKKKKKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
