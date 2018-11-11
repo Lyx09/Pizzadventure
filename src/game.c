@@ -171,13 +171,17 @@ int main(void)
     init_sdl_all(&window, &renderer);
 
     //Load map
+    struct Map *map = generate_map(SPAWN_MAP);
     struct Character *player = init_player();
     struct GameState gs =
     {
         .player = player,
         .renderer = renderer,
-        .map = NULL,
+        .map = map,
         .is_on = 1
+        .player_sprite = get_texture(PLAYER_SPRITE),
+        .tileset = get_texture(map->tileset),
+        .enemy_sprites = NULL
     };
 
     title_screen(renderer);

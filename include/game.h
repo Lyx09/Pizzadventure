@@ -10,6 +10,7 @@
 #define MUSIC_INTRO ""
 #define IMAGE_TITLE "./resources/background/menu.jpg"
 #define SPAWN_MAP "./maps/lvl0.map"
+#define PLAYER_SPRITE "./resources/sprites/pizzaboi.png"
 
 struct GameState
 {
@@ -17,6 +18,11 @@ struct GameState
     struct Map *map;
     struct Character *player;
     int is_on;
+
+    //Textures
+    SDL_Texture *player_sprite;
+    SDL_Texture *tileset; //Add multiples?
+    SDL_Texture *enemy_sprites; //Add multiples ?
 };
 
 #endif /* ! GAME_H */
