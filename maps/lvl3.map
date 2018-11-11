@@ -1,0 +1,53 @@
+prev:           ./maps/lvl2.map (0,0)
+next:           ./maps/lvl4.map (0,0)
+music:          ./resources/music/happy_adventure.mp3
+background:     ./resources/background/glacial_mountains.png
+tileset:        ./resources/tileset/tileset.png
+tilesize:       (16, 16)
+
+14
+A: S(0,2)
+B: S(1,2)
+C: S(2,1)
+E: S(2,2)
+G: S(1,0)
+I: S(0,14)
+N: O(0,0)
+O: S(1,14)
+P: O(0,0)
+R: S(0,1)
+S: H(0,4)
+U: O(1,8)
+W: S(0,5)
+Y: O(2,8)
+_
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+                                   IOOOO
+P        Y     U                  NIOOOO
+GGGGGGGGGGGGGGGGGGGGGCWWWWWWWWWRGGGGGGGG
+BBBBBBBBBBBBBBBBBBBBBE         ABBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBESSSSSSSSSABBBBBBBB

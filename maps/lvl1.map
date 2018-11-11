@@ -1,5 +1,5 @@
-prev:           ./maps/lvl1 (0,0)
-next:           ./maps/lvl1 (0,0)
+prev:           ./maps/lvl1.map (0,0)
+next:           ./maps/lvl2.map (0,0)
 music:          ./resources/music/happy_adventure.mp3
 background:     ./resources/background/dungeon.png
 tileset:        ./resources/tileset/tileset.png
