@@ -138,8 +138,8 @@ int main(void)
     //Load map
     struct Map *map = generate_map(SPAWN_MAP);
     struct Character *player = init_player();
-    player->position.x = 220;   //
-    player->position.y = 230;   //
+    player->position.x = 200;   //
+    player->position.y = 510;   //
     player->sprite_size.x = PLAYER_SPRITE_X;
     player->sprite_size.y = PLAYER_SPRITE_Y;
     struct GameState gs =
