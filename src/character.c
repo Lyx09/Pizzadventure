@@ -1,4 +1,3 @@
-#include <stdio.h> // TODO: remove me
 #include <unistd.h>
 #include "character.h"
 
@@ -7,12 +6,8 @@ struct Character *init_player(void)
     struct Character *player = malloc(sizeof(struct Character));
 
     player->status = IDLE;
-    player->position =
-    {
-        .x = PLAYER_SPAWN_X;
-        .y = PLAYER_SPAWN_Y;
-    }
-
+    player->position.x = PLAYER_SPAWN_X;
+    player->position.y = PLAYER_SPAWN_Y;
     player->health = 1;
     player->y_acc = 0;
 
