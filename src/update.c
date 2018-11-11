@@ -5,6 +5,5 @@
 
 void update(struct GameState *gs, enum action action, double dt_time)
 {
-    (void) dt_time;
-    update_position(gs->player, action, gs);
+    update_position(gs->player, action, gs, dt_time);
 }
