@@ -103,7 +103,7 @@ void render_fonts(SDL_Renderer *renderer)
         .y = 100
     };
 
-    screen_write(font, "PizzAdventure", vec_title, renderer);
+    screen_write(font, GAME_NAME, vec_title, renderer);
     SDL_RenderPresent(renderer);
     TTF_CloseFont(font);
 }

@@ -33,7 +33,7 @@ SDL_Window *new_window(void)
             SDL_WINDOWPOS_CENTERED,
             WINDOW_WIDTH,
             WINDOW_HEIGHT,
-            SDL_WINDOW_INPUT_GRABBED); //idk
+            SDL_WINDOW_BORDERLESS); //idk
     if (window == NULL)
     {
         printf("Could not open window: %s\n", SDL_GetError());
@@ -138,8 +138,8 @@ int main(void)
     //Load map
     struct Map *map = generate_map(SPAWN_MAP);
     struct Character *player = init_player();
-    player->position.x = 400;   //
-    player->position.y = 300;   //
+    player->position.x = 220;   //
+    player->position.y = 230;   //
     player->sprite_size.x = PLAYER_SPRITE_X;
     player->sprite_size.y = PLAYER_SPRITE_Y;
     struct GameState gs =

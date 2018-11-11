@@ -3,14 +3,13 @@
 
 #include <SDL.h>
 
-#define GAME_NAME "Yet Another Platformer"
+#define GAME_NAME "PizzAdventure"
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 #define PLAYER_SPRITE_X 29
 #define PLAYER_SPRITE_Y 35
 #define MUSIC_GAME_LAUNCH "./resources/music/gba.mp3"
 #define MUSIC_MENU "./resources/music/happy_adventure.mp3"
-#define MUSIC_INTRO ""
 #define IMAGE_TITLE "./resources/background/cyberpunk-street.png"
 #define SPAWN_MAP "./maps/lvl1.map"
 #define PLAYER_SPRITE "./resources/sprites/pizzaboi.png"
