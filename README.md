@@ -1,3 +1,5 @@
+<img width="1000" height="750" alt="Screenshot 2026-08-11 171938" src="https://github.com/user-attachments/assets/651ffd57-6613-4a99-bc43-68f36a74f846" />
+<img width="1000" height="750" alt="Screenshot 2026-08-11 171944" src="https://github.com/user-attachments/assets/21d960e1-6aac-4cb3-8e15-28ee54bec6e0" />
 # (Rush C)
 
 The purpose of the project is to create a platform game in C with the following
